@@ -18,7 +18,6 @@ def base64ToHex(hex_string):
 
 # This challenge has own encryption and decryption table needed to be determine 
 def decipheringfunction(decoded_string):
-
     array_1 = ['1', '2', '3', '4', '5', '6', '7', '8', 'a1', 'a2'
                , 'a3', "a4", "a5", "a6", "a7", "a8", "b1", "b2", "b3", 
                "b4", "b5", "b6", "b7", "b8", "c1", "c2", 
@@ -26,11 +25,15 @@ def decipheringfunction(decoded_string):
     array_2 = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
     clean_string = []
     result = ''
-    decoded_string = '3b3a835b2b4c5c3c4c9'
     deciphered_string = []
+    decoded_string = str(decoded_string)
     i = 0
+    # print(decoded_string)
     while i < len(decoded_string):
-        if decoded_string[i].isdigit():
+        if i == len(decoded_string) - 1:
+            deciphered_string.append(decoded_string[i])
+            i += 1
+        elif decoded_string[i].isdigit():
             deciphered_string.append(decoded_string[i])
             i += 1
         else:
